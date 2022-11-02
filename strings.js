@@ -49,3 +49,5 @@ let price = 970;
 //We bought 2crates of soda at kshs.1940;
 let soda = `We bought 2crates of soda at kshs.1940`;
 console.log(soda);
+
+ 
