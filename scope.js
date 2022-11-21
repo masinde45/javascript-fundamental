@@ -12,10 +12,12 @@ let radius = 8;
 if(radius > 0){
     const PI = 3.14;
     let circ = 2 * PI * radius;
+    console.log(circ);
 }
 console.log(radius);
 
 //lexical scope
+//looks for the nearest variable
 function outer(){
     let movie = 'Accident Man';
     console.log(movie);
@@ -41,6 +43,8 @@ square(7);
 //REASONS WHY FUNCTIONS ARE STORED IN A VARIABLE
 // 1. in javascript, functions are objects
 // - This means we can put them into varriables
+// - we can store a lot of them in an array
+// - we can even pass them around as arguments
 
 function callTwice(func){
     func();
@@ -68,12 +72,47 @@ console.log(x);
 }
 
 function rage(){
-    console.log("I love everything");
+    console.log('I love everything');
 }
 
 function repeatNTimes(action, num){
     for(let i = 0; i < num; i++){
         action();
+        
     }
 }
 repeatNTimes(rage, 13)
+
+function add(x, y){
+    return x + y;
+}
+
+function multiply(x, y){
+    return x * y;
+}
+
+function divide(x, y){
+    return x / y;
+}
+
+function subtract(x, y){
+    return x - y;
+}
+
+const pupil = {
+      puppy: add,
+      geese: multiply,
+      duck: divide,
+      camel: subtract
+}
+console.log(pupil.puppy(2, 4));
+console.log(pupil.geese(4, 3));
+console.log(pupil.duck(8, 4));
+console.log(pupil.camel(10, 5));
+
+//nesting objects in an array
+const arr1 = [add, multiply, divide, subtract]
+for(let pupil of arr1){
+   let arr2 = pupil(2,3)
+   console.log(arr2);
+}
